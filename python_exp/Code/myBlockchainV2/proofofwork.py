@@ -11,7 +11,7 @@ class ProofOfWork(object):
     def mine_block(self, data, prev_hash=''):
         print('Mining the block containing "{}"'.format(data))
         tmp_block = Block(data, prev_hash)
-        while tmp_block.nonce<ProofOfWork.MAX_NONCE:
+        while tmp_block.nonce < ProofOfWork.MAX_NONCE:
             hash_int = int(tmp_block.hash(), 16)
             if hash_int < self._target:
                 break

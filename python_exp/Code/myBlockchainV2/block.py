@@ -11,7 +11,7 @@ class Block(object):
         self.data_hash = hashlib.sha256(data.encode('utf-8')).hexdigest()  # 初始化当前区块的哈希值
 
     def hash(self):  # 计算散列值时，同样加入 nonce值
-        data_list = [str(self.nonce),str(self.timestamp),
+        data_list = [str(self.nonce), str(self.timestamp),
                      self.prev_block_hash, self.data_hash]
         return hashlib.sha256(''.join(data_list).encode('utf-8')).hexdigest()
 
